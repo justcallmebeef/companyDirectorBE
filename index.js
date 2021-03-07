@@ -1,9 +1,11 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const queries = require("./queries");
-const cors = require("cors");
 const port = process.env.PORT || 3002;
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
