@@ -34,7 +34,7 @@ app.get("/companies/:id", (req, res, next) => {
     .catch(next);
 });
 
-app.post("/companies", (req, res) => {
+app.post("/companies", cors(), (req, res) => {
   queries.createCompany(req.body).then((newCompany) => res.json(newCompany[0]));
 });
 
