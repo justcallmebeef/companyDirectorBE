@@ -5,7 +5,7 @@ exports.up = function (knex) {
     company.string("companyCity");
     company.string("companyState");
     company.string("companyDescription");
-    company.date("foundedDate");
+    company.string("foundedDate");
   });
 };
 
