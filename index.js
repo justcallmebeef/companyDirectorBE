@@ -10,18 +10,18 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/companies", (req, res, next) => {
-  queries
-    .listAllCompanies()
-    .then((companies) => res.send(companies))
-    .catch(next);
-});
+// app.get("/companies", (req, res, next) => {
+//   queries
+//     .listAllCompanies()
+//     .then((companies) => res.send(companies))
+//     .catch(next);
+// });
 
-app.get("/founders", (req, res, next) => {
-  queries
-    .listAllFounders()
-    .then((founders) => res.send(founders))
-    .catch(next);
-});
+// app.get("/founders", (req, res, next) => {
+//   queries
+//     .listAllFounders()
+//     .then((founders) => res.send(founders))
+//     .catch(next);
+// });
 
 app.listen(port);
