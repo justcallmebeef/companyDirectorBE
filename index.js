@@ -5,14 +5,14 @@ const queries = require("./queries");
 const port = process.env.PORT || 3002;
 
 app.use(cors());
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+// app.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// });
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -34,7 +34,7 @@ app.get("/companies/:id", (req, res, next) => {
     .catch(next);
 });
 
-app.post("/companies", cors(), (req, res) => {
+app.post("/companies", (req, res) => {
   queries.createCompany(req.body).then((newCompany) => res.json(newCompany[0]));
 });
 
